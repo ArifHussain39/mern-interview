@@ -52,7 +52,7 @@ function Products() {
       {selectedProduct && (
         <Modal
           title={selectedProduct.title}
-          visible={isModalVisible}
+          open={isModalVisible}
           onCancel={closeModal}
           footer={null}
         >
