@@ -10,10 +10,6 @@ function Products() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isModalVisible, setIsModalVisible] = useState(false);
 
-  function productDetail(product) {
-    setSelectedProduct(product);
-    setIsModalVisible(true);
-  }
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
@@ -25,9 +21,15 @@ function Products() {
     setIsModalVisible(false);
   };
 
+  
+  function productDetail(product) {
+    setSelectedProduct(product);
+    setIsModalVisible(true);
+  }
+
   return (
     <div>
-      <h1 style={{ marginLeft: '800px' }}> Products </h1>
+      <h1 style={{ marginLeft: '50%' }}> Products </h1>
 
       <Row gutter={[16, 16]}>
         {products.map((product) => (
@@ -39,7 +41,7 @@ function Products() {
               style={{
                 width: 240,
               }}
-              cover={<img alt="example" src={product.image} />}
+              cover={<img alt="example" src={product.image} height='250px' />}
             >
               <Meta title={product.title} description={product.price} />
             </Card>
