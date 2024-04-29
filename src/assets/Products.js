@@ -21,7 +21,7 @@ function Products() {
     setIsModalVisible(false);
   };
 
-  
+
   function productDetail(product) {
     setSelectedProduct(product);
     setIsModalVisible(true);
@@ -29,7 +29,7 @@ function Products() {
 
   return (
     <div>
-      <h1 style={{ marginLeft: '45%', marginBottom:'100px' }}> Products </h1>
+      <h1 style={{ marginLeft: '45%', marginBottom: '100px' }}> Products </h1>
 
       <Row gutter={[16, 16]}>
         {products.map((product) => (
@@ -43,7 +43,7 @@ function Products() {
               }}
               cover={<img alt="product Image" src={product.image} height='250px' />}
             >
-              <Meta title={product.title} description={product.price} />
+              <Meta title={product.title} description={'$' + product.price} />
             </Card>
           </Col>
         ))}
@@ -51,7 +51,6 @@ function Products() {
 
       {selectedProduct && (
         <Modal
-
           title={selectedProduct.title}
           visible={isModalVisible}
           onCancel={closeModal}
@@ -62,6 +61,7 @@ function Products() {
           <h3>Price: {selectedProduct.price}</h3>
         </Modal>
       )}
+
     </div>
   );
 }
