@@ -1,12 +1,10 @@
 import './App.css';
+import Products from './assets/Products.js'
 
 function App() {
   return (
     <div >
-      <h1>Hello World</h1>
-      <h1>
-        <a href="https://www.google.com">Google</a>
-      </h1>
+      <Products />
     </div>
   );
 }
