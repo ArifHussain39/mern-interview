@@ -29,7 +29,7 @@ function Products() {
 
   return (
     <div>
-      <h1 style={{ marginLeft: '50%' }}> Products </h1>
+      <h1 style={{ marginLeft: '45%', marginBottom:'100px' }}> Products </h1>
 
       <Row gutter={[16, 16]}>
         {products.map((product) => (
@@ -39,9 +39,9 @@ function Products() {
               onClick={() => productDetail(product)}
               hoverable
               style={{
-                width: 240,
+                width: 350,
               }}
-              cover={<img alt="example" src={product.image} height='250px' />}
+              cover={<img alt="product Image" src={product.image} height='250px' />}
             >
               <Meta title={product.title} description={product.price} />
             </Card>
@@ -57,7 +57,7 @@ function Products() {
           onCancel={closeModal}
           footer={null}
         >
-          <img src={selectedProduct.image} alt="" height='200px' />
+          <img src={selectedProduct.image} alt="product image" height='200px' />
           <p>{selectedProduct.description}</p>
           <h3>Price: {selectedProduct.price}</h3>
         </Modal>
